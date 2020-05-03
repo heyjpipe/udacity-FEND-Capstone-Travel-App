@@ -7,3 +7,5 @@
 //import from client/styles/style.scss
 //export client/js/app.js main function
 //add export to style.scss and app.js
+
+alert('I exist!')
