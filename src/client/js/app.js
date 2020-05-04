@@ -80,3 +80,8 @@ const updateUI = async () => {
     console.log("error", error);
   }
 };
+
+export {
+  getDate,
+  performAction
+}
