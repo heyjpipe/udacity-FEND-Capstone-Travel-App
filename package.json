@@ -1,26 +1,31 @@
 {
-  "name": "capstone-project",
+  "name": "udacity-fend-capstone-travel-app",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node src/server/index.js",
-    "build": "webpack"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "description": "## Overview This project aims to give you the opportunity to put all of the skills you have learned into one project to build your own custom travel app. Due to the nature of this course, it is very JavaScript heavy, but it is still expected you create clean and appealing HTML/CSS. You will also be targeting the DOM, working with objects, and retrieving data from 3 APIs in which one of those is reliant on another to work. Finally, this is all going to be done in a Webpack environment, using an express server, and wrapped up with service workers.",
+  "main": "webpack.config.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "babel-loader": "^8.1.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
-  "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
-    "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^3.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack-dev-server": "^3.7.2"
-  }
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyjpipe/udacity-FEND-Capstone-Travel-App.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "\"\",",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heyjpipe/udacity-FEND-Capstone-Travel-App/issues"
+  },
+  "homepage": "https://github.com/heyjpipe/udacity-FEND-Capstone-Travel-App#readme"
 }
