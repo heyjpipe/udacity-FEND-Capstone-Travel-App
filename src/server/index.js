@@ -1,12 +1,8 @@
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
-// Require Express to run server and routes
 const express = require('express');
-
-// Start up an instance of app
 const app = express();
-
 const bodyParser = require('body-parser');
 
 /* Middleware*/
@@ -22,15 +18,14 @@ app.use(cors());
 app.use(express.static('dist'));
 
 // Setup Server
-
 const port = 3000;
-//Spin up server
 const server = app.listen(port, listening);
 //console.log to debug
 function listening() {
     console.log('The server is running');
     console.log('Running on localhost: ${port}');
 };
+
 // POST route
 const data = [];
 app.post('/add', addInfo);
@@ -42,9 +37,13 @@ function addInfo(req, res) {
   res.send(projectData);
 }
 
-// Callback function to complete GET '/all'
 app.get('/all', getInfo);
 
 function getInfo(req, res) {
   res.send(projectData);
 }
+
+//NEED TO REVIEW. ADDED FROM SETUP IN FEND 5.2.13
+app.get('/', function (req, res) {
+  res.sendFile('dist/index.html')
+})
