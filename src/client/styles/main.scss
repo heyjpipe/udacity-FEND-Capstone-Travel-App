@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background: url("../media/sunset2.jpg") no-repeat center center
+  background: url("../media/sunset2.png") no-repeat center center
     fixed;
   background-position: top;
   background-size: 100%;
@@ -29,7 +29,7 @@ body {
   }
 
   @media screen and (min-width: $break-small) and (max-width: $break-medium) {
-    background: url("../media/sunset2.jpg") no-repeat center center
+    background: url("../media/sunset2.png") no-repeat center center
       fixed;
     background-position: top;
     background-size: 100%;
@@ -42,7 +42,7 @@ body {
   }
 
   @media screen and (min-width: $break-medium) and (max-width: $break-large) {
-    background: url("../media/sunset2.jpg") no-repeat center
+    background: url("../media/sunset2.png") no-repeat center
       center fixed;
     background-position: top;
     background-size: 100%;
