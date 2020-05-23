@@ -3,36 +3,51 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Weather Journal</title>
-  <script type="text/javascript" src="../../../dist/main.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel App</title>
 </head>
 
 <body>
-  <div id = "app">
-    <div class ="holder headline">
-      Weather Journal App
+  <header>
+    <div class = "logo_container">
+      <img id = "logo" src = "../media/bluestar.png" alt = "logo">
     </div>
-  <div class ="holder zip">
-    <label for="zip">Enter Zipcode here</label>
-    <input type="text" id="zip" placeholder="enter zip code here">
-  </div>
-  <div class ="holder feel">
-    <label for="feelings">How are you feeling today?</label>
-    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
-    <button id="generate" type = "submit"> Generate </button>
-  </div>
-  <div class ="holder entry">
-    <div class = "title">Most Recent Entry</div>
-   <div id = "entryHolder">
-    <div id = "date"></div> 
-   <div id = "temp"></div>
-   <div id = "content"></div>
-  </div>
-  </div>
-  </div>
-<script src="app.js" type="text/javascript"></script>
+  </header>
+
+  <main>
+    <div class="container">
+      <div id="trip-form__container">
+        <div class="trip-text__container">
+          <h1>Travel App</h1>
+          <p>Enter a city name and travel dates to receive current weather information</p>
+        </div>
+
+        <form onsubmit="Client.submitForm(event)" autocomplete="off">
+          <label for="city"></label>
+          <input id="city" type="text" placeholder="Enter city" required>
+          <label for="startDate">Start date:</label>
+          <input id="startDate" type="date" required>
+          <label for="endDate">End date:</label>
+          <input id="endDate" type="date" required>
+          <input type="submit">
+        </form>
+      </div>
+      <div id="new-trip">
+        <div>
+          <h2 class="headline">New Trip Info</h2>
+          <p class="description">JENN - REMOVE THIS SECTION?</p>
+        </div>
+        <div id="new-trip__container"></div>
+      </div>
+      <div id="trips">
+        <h1>Saved Trips</h1>
+        <div id="trips__container">
+          <p id="no-trips__message">No saved trips</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer><small>&copy; Jennifer Piper</small></footer>
 
 </body>
 </html>
