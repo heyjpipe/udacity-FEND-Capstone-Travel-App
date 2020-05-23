@@ -1,113 +1,373 @@
+@import "./variables.scss";
+@import "./resets.scss";
+@import "./header.scss";
+@import "./footer.scss";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
-    background-color: white;
-    font-family: 'Oswald', sans-serif;
+  background: url("../media/sunset2.jpg") no-repeat center center
+    fixed;
+  background-position: top;
+  background-size: 100%;
+  background-attachment: scroll;
+  background-color: #ad764a;
+  -ms-overflow-style: none;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: $break-small) {
+    background: none;
+    background-color: #ad764a;
+    font-family: $body-font;
+    font-weight: normal;
+    -ms-overflow-style: none;
+    font-size: 0.8em;
+  }
+
+  @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    background: url("../media/sunset2.jpg") no-repeat center center
+      fixed;
+    background-position: top;
+    background-size: 100%;
+    background-attachment: scroll;
+    background-color: #ad764a;
+    font-family: $body-font;
+    font-weight: normal;
+    -ms-overflow-style: none;
+    font-size: 0.5em;
+  }
+
+  @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+    background: url("../media/sunset2.jpg") no-repeat center
+      center fixed;
+    background-position: top;
+    background-size: 100%;
+    background-attachment: scroll;
+    background-color: #ad764a;
+    font-family: $body-font;
+    font-weight: normal;
+    -ms-overflow-style: none;
+    font-size: 0.8em;
+  }
 }
 
-#app {
+body::-webkit-scrollbar {
+  display: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.container {
+  display: grid;
+  min-height: 90%;
+  grid-template-columns: 100%;
+  justify-items: center;
+}
+
+/* Trip Form*/
+
+#trip-form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+  @media screen and (max-width: $break-small) {
+    margin-top: 0;
+    font-size: 1em;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  @media screen and (min-width: $break-medium) and (max-width: 1000px) {
+    margin-top: 7vh;
+    margin-bottom: 15vw;
+    font-size: 1.2em;
+  }
+  @media screen and (min-width: 1001px) and (max-width: $break-large) {
+    margin-top: 7vh;
+    margin-bottom: 20vw;
+  }
+
+  @media screen and (min-width: $break-large) {
+    margin-top: 5vh;
+    margin-bottom: 10vw;
+  }
+
+  form {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    grid-auto-rows: minmax(150px, auto);
-    grid-template-columns: 3;
-    height:100vh;
-    background: #f23557;
-    color: #f0d43a;
-    justify-content: space-between;
-    grid-gap: 1em;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-}
-
-.holder {
-
-}
-
-.entry { 
-    background: rgba(59, 74, 107, .4);
-}
-
-#entryHolder{
-
-}
-
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
-.headline {
-
-}
-.title{
-
-}
-
-/*  Basic Styling To Override Default For Basic HTML Elements */
-label{
-    display:block;
-    font-size: 27px;
-}
-
-input{
-    display:block;
-    height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    @media screen and (max-width: $break-small) {
+      flex-direction: column;
+    }
+  }
+  input {
+    padding: 5px 20px;
+    width: 100%;
+    line-height: 16px;
+    margin: 10px 0;
+    height: 5vh;
+    width: 25vh;
+    margin: 1vh;
     border: none;
-}
-
-button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
     border: none;
-    box-shadow: 2px 4px 5px #444;
+    background-color: $green-color;
+    font-size: 1.2em;
+    font-weight: 150;
+    color: $white-color;
+    border-radius: 4px;
+    &:hover {
+      color: $white-color;
+      background-color: $orange-color;
+    }
+    @media screen and (max-width: $break-small) {
+      text-align: center;
+      font-size: 1.3em;
+      height: 8vh;
+      width: 65vw;
+    }
+    @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+      font-size: 1.5em;
+      width: 30vw;
+    }
+    @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+      font-size: 1.3em;
+      width: 24vw;
+    }
+  }
+  label {
+    font-size: 1em;
+    color: $white-color;
+    @media screen and (max-width: $break-medium) {
+      display: none;
+    }
+    @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+      display: none;
+    }
+  }
+  input[type="submit"] {
+    color: $green-color;
+    background-color: $white-color;
+    &:hover {
+      color: $white-color;
+      background-color: $orange-color;
+    }
+  }
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $white-color;
+    opacity: 1; /* Firefox */
+  }
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $white-color;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $white-color;
+  }
+
+  h1 {
+    font-family: $roboto-slab;
+    font-weight: italic;
+    font-size: 3em;
+  }
+  p {
+    font-weight: italic;
+    font-size: 1.1em;
+    color: $white-color;
+    margin-top: 1em;
+  }
 }
-h1{
-    font-size: 36px;
+.trip-text__container {
+  text-align: center;
 }
 
-textarea{
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+/* New Trip*/
+#new-trip {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #385d6a;
+  width: 70vh;
+  border-radius: 2%;
+  text-align: center;
+  padding: 2%;
+  margin-bottom: 5vh;
+  @media screen and (max-width: $break-medium) {
+    width: 96vw;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    font-size: 1.8em;
+    width: auto;
+  }
+  @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+    width: auto;
+  }
+  .headline {
+    font-family: $roboto-slab;
+    font-weight: 300;
+    font-size: 2.5em;
+    color: $white-color;
+  }
+  .description {
+    margin-top: 1vh;
+  }
 }
-/* Reset style for HTML element on active to have no border*/
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
+
+/* Trips List*/
+#trips {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3vh;
+
+  @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    font-size: 1.5em;
+  }
+
+  @media screen and (min-width: 1020px) and (max-width: $break-large) {
+  }
+
+  h1 {
+    font-family: $roboto-slab;
+    font-weight: 400;
+    font-size: 2.5em;
+    color: $white-color;
+  }
 }
-/* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
 
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+#trips__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 8vh;
+  justify-content: space-evenly;
+  text-align: center;
+  @media screen and (max-width: $break-small) {
+    margin-top: 0;
+    width: auto;
+    height: auto;
+  }
+  #no-trips__message {
+    margin-top: 6vh;
+    font-size: 1em;
+    font-style: italic;
+  }
+}
 
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+.trip__card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40%;
+  margin: 2vh;
+  @media screen and (max-width: $break-small) {
+    margin-top: 6vh;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    margin-top: 6vh;
 
-} 
+    font-size: 1em;
+  }
+  @media screen and (min-width: 1500px) {
+    margin: 4vh;
+  }
+}
+
+.trip-image {
+  width: 20vw;
+  height: 24vh;
+  border-radius: 25px;
+  @media screen and (max-width: $break-medium) {
+    width: 45vw;
+    height: 20vh;
+  }
+  @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+    height: 25vh;
+    width: 40vw;
+  }
+}
+
+.trip-description__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 5vh;
+  p {
+    margin-top: 1vh;
+  }
+}
+
+.trip-weather__container {
+  h2 {
+    font-weight: bold;
+    color: $green-color;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 2vh;
+}
+
+.weather-icon {
+  height: 4vh;
+  width: 2vw;
+  @media screen and (max-width: $break-small) {
+    height: 5vh;
+    width: 8vw;
+  }
+
+  @media screen and (min-width: $break-small) and (max-width: $break-medium) {
+    height: 6vh;
+    width: 6vw;
+  }
+  @media screen and (min-width: $break-medium) and (max-width: $break-large) {
+    height: 6vh;
+    width: 4vw;
+  }
+  @media screen and (min-width: $break-large) {
+    height: 8vh;
+    width: 4vw;
+  }
+}
+
+.card-button {
+  margin-top: 2vh;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  height: 4vh;
+  width: 12vh;
+}
+
+.green-button {
+  background-color: $green-color;
+  &:hover {
+    color: $green-color;
+    background-color: $white-color;
+  }
+}
+
+.white-button {
+  background-color: $white-color;
+  &:hover {
+    color: $white-color;
+    background-color: $orange-color;
+  }
+}

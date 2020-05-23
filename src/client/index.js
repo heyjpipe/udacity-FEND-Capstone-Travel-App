@@ -1,10 +1,6 @@
-import { getDate } from './js/app'
-import { performAction } from './js/app'
-import './styles/style.scss'
+import "./styles/main.scss";
+import { submitForm, removeTrip, addTrip, onPageLoad } from "./js/app.js";
 
-alert('I exist!')
+onPageLoad();
 
-export {
-    getDate, 
-    performAction 
-}
+export { submitForm, removeTrip, addTrip };
