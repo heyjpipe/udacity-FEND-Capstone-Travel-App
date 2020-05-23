@@ -1,6 +1,6 @@
 import { getGeoData, getWeatherData, getPixabayImage } from "./APIrequests";
 
-// get data from form
+// get user input from form
 const getUserInput = () => {
   const city = document.getElementById("city").value.toLowerCase();
   const startDate = document
@@ -17,7 +17,7 @@ const getUserInput = () => {
   };
 };
 
-// construct object from APIs data and user input
+// build object from APIs data and user input
 const buildTripObject = (geoData, weatherData, imagesData) => {
   return {
     city: geoData.geonames[0].toponymName,
@@ -43,7 +43,7 @@ const buildTripsView = () => {
 
   const tripsContainer = document.getElementById("trips__container");
   tripsContainer.textContent = "";
-  const fragment = document.createDocumentFragment(); // DocumentFragment instead of a <div> for permormance
+  const fragment = document.createDocumentFragment();
 
   for (let trip of trips) {
     const newElement = document.createElement("div");
@@ -74,7 +74,7 @@ const buildTripsView = () => {
     fragment.appendChild(newElement);
   }
 
-  tripsContainer.appendChild(fragment); // reflow and repaint once here
+  tripsContainer.appendChild(fragment); // reflow and repaint once
 };
 
 const buildAddTripView = (trip) => {
@@ -128,7 +128,7 @@ const requestDataFromAPIs = async (city) => {
 
 // set trips in local storage
 const setLocalTrips = (trips) => {
-  // FIXME:
+  
   localStorage.removeItem("trips");
   localStorage.setItem("trips", JSON.stringify(trips));
 };

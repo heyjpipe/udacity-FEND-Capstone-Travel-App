@@ -1,15 +1,15 @@
-//URL and API Key for GeoNames Web Service
+//URL and API Key for GeoNames
 const geonamesBaseURL =
   "https://secure.geonames.org/searchJSON?formatted=true&q=";
-const geonamesUsername = "petya";
+const geonamesUsername = "heyjpipe";
 
 //URL and API Key for WeatherBit
 const weatherbitBaseURL = "https://api.weatherbit.io/v2.0/current?city=";
-const weatherbitAPIKey = "b221ade3027d4921a2ff592b6372af95";
+const weatherbitAPIKey = "6513abecb492407fad70352bcec6bf0f";
 
 //URL and API Key for Pixabay
 const pixabayURL = "https://pixabay.com/api/";
-const pixabayAPIKey = "16258949-243f4ab8f7fb0f7d91fa289fd";
+const pixabayAPIKey = "16710760-b7853649eb64652cdef2e1597";
 
 //URL for travel-app API
 const isLocalEnvironment =
@@ -18,10 +18,10 @@ const isLocalEnvironment =
 
 const baseURL = isLocalEnvironment
   ? "http://localhost:8000"
-  : "https://udacity-travel-app.herokuapp.com";
+  : "https://udacity-capstone-travel-app.herokuapp.com/";
 
 const getGeoData = async (city) => {
-  if (!city) alert("You must enter a city");
+  if (!city) alert("Please enter a valid city name");
   const geonamesEndpoint = `${geonamesBaseURL}${city}&username=${geonamesUsername}`;
   try {
     const response = await fetch(geonamesEndpoint);
@@ -32,7 +32,7 @@ const getGeoData = async (city) => {
 };
 
 const getWeatherData = async (city) => {
-  if (!city) alert("You must enter a city");
+  if (!city) alert("Please enter a valid city name");
   const weatherbitEndpoint = `${weatherbitBaseURL}${city}&key=${weatherbitAPIKey}`;
   try {
     const response = await fetch(weatherbitEndpoint);
