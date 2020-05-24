@@ -1,17 +1,14 @@
 // Google fonts
-@import url("http://fonts.googleapis.com/css?family=Roboto + Slab|Open + Sans:400italic,
-  700italic,
-  400,
-  700");
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
 // Font Variables
-$roboto-slab: "Roboto Slab", serif;
+$shadows-into-light: "Shadows Into Light", serif;
 $open-sans: "Open Sans", sans-serif;
-$body-font: Helvetica, sans-serif;
+$body-font: "Shadows Into Light", sans-serif;
 
 // Color Variables
 $white-color: #fefefe;
-$orange-color: #ad764a;
+$blue-color: #385d6a;
 $green-color: #385d6a;
 $black-color: #313733;
 
@@ -19,3 +16,4 @@ $black-color: #313733;
 $break-small: 650px;
 $break-medium: 800px;
 $break-large: 1200px;
+
